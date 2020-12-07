@@ -7,6 +7,14 @@
 
 std::vector< char > foo(std::list< Human >& people)
 {
-    // Twoja implementacja tutaj
-    return {};
+    std::vector<char> ln;
+    for( auto ite = people.begin(); ite != people.end(); ++ite)
+    {
+        ite->birthday();
+        if(  ite->isMonster() == true)
+            ln.insert(ln.begin(),'n');
+        else
+            ln.insert(ln.begin(),'y');
+    }
+    return ln;
 }
